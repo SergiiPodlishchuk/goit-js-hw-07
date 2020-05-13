@@ -8,13 +8,15 @@ const ingredients = [
 ];
 
 const ulIngredients = document.querySelector("#ingredients");
+const df = document.createDocumentFragment();
 
 const addIngredient = (arrIngredients) =>
   arrIngredients.forEach((ingredient) => {
     const liVegetable = document.createElement("li");
     liVegetable.textContent = ingredient;
-    ulIngredients.appendChild(liVegetable);
+    df.appendChild(liVegetable);
   });
-console.log(ulIngredients);
 
 addIngredient(ingredients);
+
+ulIngredients.appendChild(df);

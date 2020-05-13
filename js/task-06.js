@@ -7,7 +7,9 @@ function validInput() {
   const dataLength = Number(input.dataset.length);
   if (valueLength === dataLength) {
     input.classList.add("valid");
+    input.classList.remove("invalid");
   } else {
     input.classList.add("invalid");
+    input.classList.remove("valid");
   }
 }

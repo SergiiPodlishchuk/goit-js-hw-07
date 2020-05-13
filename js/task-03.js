@@ -18,28 +18,16 @@ const images = [
 
 const ulGallery = document.querySelector("#gallery");
 
-// const addImages = (images) =>
-//   images.forEach((image) => {
-//     const createLi = document.createElement("li");
-//     const createImg = document.createElement("img");
-//     createImg.setAttribute("src", image.url);
-//     createImg.setAttribute("alt", image.alt);
-//     ulGallery.appendChild(createLi);
-//     createLi.appendChild(createImg);
-
-//     return ulGallery;
-//   });
-// console.log(ulGallery);
-
-// addImages(images);
+let total = "";
 
 const addImages = (images) =>
   images.forEach((image) => {
     const liItem = `<li><img src = ${image.url} alt = ${image.alt}></li>`;
-    ulGallery.insertAdjacentHTML("beforeend", liItem);
-    return ulGallery;
+    total += liItem;
   });
 
-console.log(ulGallery);
-
 addImages(images);
+
+ulGallery.insertAdjacentHTML("beforeend", total);
+
+console.log(ulGallery);
